@@ -174,10 +174,11 @@ obj =person("mani",23)
 print(obj.name,obj.age)
 
 # What is a Large Language Model? Tokens, training, prediction 
- # LLM :  llm stands for large lanugage model and its trained under massive data. 
- # and its predict next word in a sequence   examples: chagpt,geminiai,like that 
- # and its generate sentences and all those things how humans will generate
-  
+"""
+  LLM :  llm stands for large lanugage model and its trained under massive data. 
+  and its predict next word in a sequence   examples: chagpt,geminiai,like that 
+  and its generate sentences and all those things how humans will generate
+  """
  # token: it is smallest unit of text 
  # llms are dont see raw sentences and its convert the sentences into tokens
  

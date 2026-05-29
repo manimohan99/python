@@ -1,0 +1,50 @@
+    Analysis of llm s to choose for better one for [poc]
+
+
+     after comparing all four models,qwen is identified as the best choice for the internalPolicy documents Q&a
+
+        why qwen only :
+         
+         1. excelent document understanding
+
+         2.strong contextual resoning
+
+         3.better long_context support
+
+         4.very effective for ragbased system 
+
+         5.lower hallucination rate [ i think this is main purpose to build rag system internally]
+
+         6.comparing the other llms this llm will less disadvantages 
+          7. more accurate responses for policy-based queries
+          8.  and it is cost effective cheaper deployment comparing the others 
+
+        Simple   qwen  architecture for poc 
+
+          Policy Document (pdf/doc)
+                |
+            Text Extracting
+                 |
+            Chunking
+                |
+           Generating Embeddings
+                 |
+        store in vector Db
+              [chromaDb]
+                 |
+            User Questions
+                |
+           Semantic Search
+                 |
+        Relevent Chunks Retrived |
+                 | 
+             Qwen Model
+                | 
+            Final Response
+               |
+            chatbot UI
+
+            **final conclusion for this **
+
+            this analysis concludes that qwen is the most suitable LLm
+            for developing internnal policy Documents Questions & answers chatbot while phi and gemma provide good alternatives for lightweight and balanced systems qwen understanding capabality is heigh of document understanding comparing the others llm and cost effective hallucination rate is very low comapring the other llm
