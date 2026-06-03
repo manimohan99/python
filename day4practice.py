@@ -37,15 +37,40 @@ Custom exception classes. """
 
 
 #CSV reading and writing with the csv module #try / except / finally, raising exceptions 
+#import csv
+#csv_file_path = r"C:\Users\SRS\Desktop\Python_21_Days_Practice\pythonweek1\data.csv"
+#try:
+   # with open(csv_file_path,"r")as csvfile:
+       # reader=csv.reader(csvfile)
+       # for i, row in enumerate(reader):
+          ##  if i < 6:  # Only print first 6 rows
+            #    print(row)
+            #else:
+              #  break
+#except FileNotFoundError:
+  #  print("The specified CSV file was not found.")
+#except PermissionError:
+    #print("Permission denied: unable to open the CSV file.")"""
+    
 import csv
-csv_file_path = r"C:\Users\SRS\Desktop\Python_21_Days_Practice\pythonweek1\data.csv"
-try:
-    with open(csv_file_path,"r")as csvfile:
-        reader=csv.reader(csvfile)
-        for row in reader:
-            print(row)
-except FileNotFoundError:
-    print("The specified CSV file was not found.")
-except PermissionError:
-    print("Permission denied: unable to open the CSV file.")
 
+# Use relative path (same directory as the script)
+file_path = "data.csv"
+
+try:
+    with open(file_path, 'r') as csvfile:
+        reader = csv.reader(csvfile)
+        for i, row in enumerate(reader):
+                if i < 6:
+                    print(row)
+    with open(file_path, 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['name', 'age', 'city'])
+        writer.writerow(['Alice', 30, 'New York'])
+        writer.writerow(['Bob', 25, 'Los Angeles'])
+    print("CSV file written successfully!")
+except FileNotFoundError:
+    print("File not found!")
+except PermissionError:
+    print("Permission denied!")
+    
